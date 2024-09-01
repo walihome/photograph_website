@@ -16,9 +16,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'  # 修改为你需要的Node.js版本
-          
-      - name: Install dependencies esbuild
-        run: npm install --save-dev esbuild
         
       - name: Build documentation
         run: npm run build
