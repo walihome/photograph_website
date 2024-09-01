@@ -38,5 +38,5 @@ jobs:
             accessKeySecret: ${{ secrets.ACCESSSECRET }}
             bucket: photography-website
             # use your own endpoint
-            endpoint: photography-website.oss-cn-hangzhou.aliyuncs.com
+            endpoint: oss-cn-hangzhou.aliyuncs.com
             folder: './build'
