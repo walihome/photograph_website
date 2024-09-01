@@ -11,12 +11,32 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Deploy to Aliyun OSS
-        uses: JayMeDotDot/aliyun-OSS-deployer@v1.0.0
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          access-key-id: ${{ secrets.ACCESSID }}  # 使用 GitHub Secrets
-          access-key-secret: ${{ secrets.ACCESSSECRET }}  # 使用 GitHub Secrets
-          bucket: photography-website
-          endpoint: photography-website.oss-cn-hangzhou.aliyuncs.com
-          # 其他可选参数根据需要添加，确保适当的缩进和格式
+          node-version: '20'  # 修改为你需要的Node.js版本
+          
+      - name: Install dependencies esbuild
+        run: npm install --save-dev esbuild
+        
+      - name: Build documentation
+        run: npm run build
+
+      # - name: Deploy to Aliyun OSS
+      #   uses: JayMeDotDot/aliyun-OSS-deployer@v1.0.0
+      #   with:
+      #     access-key-id: ${{ secrets.ACCESSID }}  # 使用 GitHub Secrets
+      #     access-key-secret: ${{ secrets.ACCESSSECRET }}  # 使用 GitHub Secrets
+      #     bucket: photography-website
+      #     endpoint: photography-website.oss-cn-hangzhou.aliyuncs.com
+      #     # 其他可选参数根据需要添加，确保适当的缩进和格式
+      - name: upload files to OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+            accessKeyId: ${{ secrets.ACCESSID }}
+            accessKeySecret: ${{ secrets.ACCESSSECRET }}
+            bucket: photography-website
+            # use your own endpoint
+            endpoint: photography-website.oss-cn-hangzhou.aliyuncs.com
+            folder: './build'
