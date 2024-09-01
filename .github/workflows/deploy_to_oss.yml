@@ -33,10 +33,10 @@ jobs:
       #     # 其他可选参数根据需要添加，确保适当的缩进和格式
       - name: upload files to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
-        env:
+        with:
             accessKeyId: ${{ secrets.ACCESSID }}
             accessKeySecret: ${{ secrets.ACCESSSECRET }}
             bucket: photography-website
             # use your own endpoint
             endpoint: oss-cn-hangzhou.aliyuncs.com
-            folder: './build'
+            folder: build/
