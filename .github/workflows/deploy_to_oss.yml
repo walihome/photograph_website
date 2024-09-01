@@ -1,0 +1,28 @@
+            - name: delpoy aliyun oss
+  # You may pin to the exact commit or the version.
+  # uses: JayMeDotDot/aliyun-OSS-deployer@49aac05eb7d0fa0c384ac6d140633e274a5b2c80
+  uses: JayMeDotDot/aliyun-OSS-deployer@v1.0.0
+  with:
+    # 通过阿里云控制台创建的AccessKey ID
+    access-key-id: ${{ACCESSID}}
+    # 通过阿里云控制台创建的AccessKey Secret
+    access-key-secret: ${{ACCESSSECRET}}
+    # 使用临时授权方式
+    sts-token: # optional
+    # 通过控制台或PutBucket创建的Bucket
+    bucket: photography-website
+    # OSS访问域名
+    endpoint: photography-website.oss-cn-hangzhou.aliyuncs.com
+    # Bucket所在的区域
+    region: # optional
+    # 是否使用阿里云内网访问
+    internal: # optional, default is false
+    # 是否支持上传自定义域名
+    cname: # optional, default is false
+    # Bucket是否开启请求者付费模式
+    is-request-pay: # optional, default is false
+    # 是否使用HTTPS
+    secure: # optional, default is false
+    # 超时时间
+    timeout: # optional, default is 60000
+          
