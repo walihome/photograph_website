@@ -34,8 +34,8 @@ jobs:
       - name: upload files to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
         with:
-            accessKeyId: ${{ secrets.ACCESSID }}
-            accessKeySecret: ${{ secrets.ACCESSSECRET }}
+            accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
+            accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
             bucket: photography-website
             # use your own endpoint
             endpoint: oss-cn-hangzhou.aliyuncs.com
