@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './PhotoGallery.css';
-import mockPhotos from './mockPhotos'; // 导入mock数据
 
 function PhotoGallery() {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    // 使用mock数据
-    setPhotos(mockPhotos);
+    // 从指定的URL获取图片列表
+    fetch('http://images.dooocs.com/')
+      .then(response => response.json())
+      .then(data => {
+        // 将获取到的图片列表设置到state中
+        const fetchedPhotos = data.images.map((url, index) => ({
+          id: index + 1,
+          url: url,
+          title: `照片${index + 1}`
+        }));
+        setPhotos(fetchedPhotos);
+      })
+      .catch(error => console.error('Error fetching photos:', error));
   }, []);
 
   return (
