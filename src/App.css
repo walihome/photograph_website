@@ -1,5 +1,35 @@
 .App {
   text-align: center;
+  background-color: #1c1c1c; /* 设置背景颜色为深色 */
+  min-height: 100vh; /* 确保背景覆盖整个视口高度 */
+  padding: 20px;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent; /* 确保背景透明 */
+  position: absolute;
+  top: 0;
+  left: 20px; /* 将整个header稍微往右挪 */
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* 将logo和标题稍微往右挪 */
+}
+
+.logo {
+  height: 20px; /* 进一步缩小logo的高度 */
+  margin-right: 10px;
+}
+
+.title {
+  color: white;
+  font-size: 1rem; /* 进一步缩小标题的大小 */
+  margin: 0;
 }
 
 .App-logo {
@@ -11,17 +41,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {

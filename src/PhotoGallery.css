@@ -1,0 +1,89 @@
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* 确保照片之间有足够的间距 */
+  padding: 80px 20px 20px; /* 将第一张照片的位置往下挪 */
+  background-color: #1c1c1c; /* 设置背景颜色为深色 */
+  min-height: 100vh; /* 确保背景覆盖整个视口高度 */
+}
+
+.photo-item {
+  width: 100%;
+  max-width: 80vw; /* 最大宽度为视口宽度的80% */
+  text-align: center;
+  box-sizing: border-box; /* 确保padding和border不会影响元素的总宽度 */
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh; /* 确保图片的最大高度不超过视口高度的80% */
+  object-fit: contain; /* 确保图片保持原始长宽比 */
+}
+
+.photo-details {
+  background-color: #1c1c1c; /* 设置背景颜色为深色 */
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: left;
+  width: 80%; /* 调整details-list的宽度 */
+  margin-left: auto; /* 确保photo-details居中 */
+  margin-right: auto; /* 确保photo-details居中 */
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* 调整内部元素之间的间距 */
+}
+
+.details-list .item {
+  margin-bottom: 10px;
+  flex: 1; /* 使每个detail占据相同的宽度 */
+  text-align: center; /* 让每个detail居中 */
+}
+
+.details-list .title {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.stars {
+  display: flex;
+  justify-content: center; /* 让星星居中 */
+}
+
+.stars .star.filled {
+  color: gold;
+  margin-right: 2px;
+}
+
+.exif-details {
+  display: flex;
+  justify-content: center; /* 让EXIF信息居中 */
+  gap: 3px; /* 调整内部元素之间的间距为原来的三分之一 */
+}
+
+.exif-details li {
+  display: flex;
+  align-items: center;
+}
+
+.exif-details li i {
+  margin-right: 3px; /* 调整内部元素之间的间距为原来的三分之一 */
+}
+
+.location,
+.camera,
+.lens {
+  font-size: 0.9rem;
+  text-align: center; /* 让位置、相机和镜头信息居中 */
+}
