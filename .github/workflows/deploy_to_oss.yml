@@ -15,8 +15,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'  # 修改为你需要的Node.js版本
-        
+          node-version: '22'  # 修改为你需要的Node.js版本
+      
+      - name: Install dependencies
+        run: npm install
+      
       - name: Build documentation
         run: npm run build
 
