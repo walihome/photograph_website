@@ -6,7 +6,7 @@ function PhotoGallery() {
 
   useEffect(() => {
     // 从指定的URL获取图片列表
-    fetch('http://images.dooocs.com/')
+    fetch('https://images.dooocs.com/')
       .then(response => response.json())
       .then(data => {
         // 将获取到的图片列表设置到state中
